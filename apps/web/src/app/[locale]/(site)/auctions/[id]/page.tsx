@@ -205,7 +205,7 @@ export default async function AuctionPage({ params }: Params) {
           <Tabs items={tabs} />
         </div>
 
-        <aside className="space-y-4 lg:order-first lg:sticky lg:top-24 lg:self-start" dir={textDir}>
+        <aside id="bid" className="scroll-mt-28 space-y-4 lg:order-first lg:sticky lg:top-28 lg:self-start" dir={textDir}>
           <BidPanel
             auctionId={c.id}
             refNumber={c.refNumber}

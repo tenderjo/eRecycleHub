@@ -35,6 +35,9 @@ export function dateTime(iso: string | null | undefined, locale: string, withTim
 
 export const date = (iso: string | null | undefined, locale: string) => dateTime(iso, locale, false);
 
+export const time = (iso: string | null | undefined, locale: string) =>
+  iso ? new Intl.DateTimeFormat(tag(locale), { timeZone: DISPLAY_TZ, hour: "2-digit", minute: "2-digit" }).format(new Date(iso)) : "";
+
 export function relativeTime(iso: string, locale: string, nowMs: number) {
   const diff = (new Date(iso).getTime() - nowMs) / 1000;
   const rtf = new Intl.RelativeTimeFormat(tag(locale), { numeric: "auto" });

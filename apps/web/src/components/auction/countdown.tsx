@@ -69,16 +69,22 @@ export function Countdown({
   const { n, unit } = lead(p);
 
   if (size === "card") {
-    // Small card beside the price: "Ends in / 2 days".
+    // Ticket on the edge of a card photo: a coloured "Ends in" tab over four white cells (days, hours, minutes, seconds).
+    const cells = [["d", p.days], ["h", p.hours], ["m", p.minutes], ["s", p.seconds]] as const;
     return (
-      <div role="timer" aria-label={label} className={cn("flex items-center gap-2 rounded-lg border border-line bg-ground px-2.5 py-1.5", className)}>
-        <Clock className={cn("h-4 w-4 shrink-0", soon ? "text-rust" : "text-patina")} aria-hidden />
-        <span className="flex flex-col leading-tight" aria-hidden>
-          <span className="text-[10px] text-muted">{mode === "end" ? t("endsIn") : t("startsIn")}</span>
-          <span className={cn("tabular text-sm font-extrabold", soon ? "text-rust" : "text-ink")}>
-            {n} {t(`unit.${unit}`, { n })}
-          </span>
-        </span>
+      <div role="timer" aria-label={label} className={cn("overflow-hidden rounded-xl bg-surface shadow-[0_12px_30px_-10px_rgb(15_47_51/0.45)]", className)}>
+        <div aria-hidden className={cn("flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-extrabold text-white", soon ? "bg-rust" : mode === "start" ? "bg-info" : "bg-patina")}>
+          <Clock className="h-3.5 w-3.5" />
+          {mode === "end" ? t("endsIn") : t("startsIn")}
+        </div>
+        <div aria-hidden className="grid grid-cols-4 divide-x divide-line rtl:divide-x-reverse">
+          {cells.map(([u, v]) => (
+            <span key={u} className="flex flex-col items-center px-2.5 py-1.5 leading-none">
+              <span className={cn("tabular text-lg font-black", soon ? "text-rust" : "text-ink", u === "d" && v === 0 && "text-muted")}>{String(v).padStart(2, "0")}</span>
+              <span className="mt-1 text-[10px] text-muted">{t(`unit.${u}`, { n: v })}</span>
+            </span>
+          ))}
+        </div>
       </div>
     );
   }

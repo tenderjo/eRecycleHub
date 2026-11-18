@@ -6,7 +6,16 @@
     "startsIn": "Starts in",
     "closed": "Bidding closed",
     "bids": "{count, plural, =0 {No bids} one {# bid} other {# bids}}",
-    "platform": "eRecycleHub"
+    "platform": "eRecycleHub",
+    "details": "View details",
+    "bidNow": "Bid now",
+    "insurance": "Insurance",
+    "startPrice": "Starting price",
+    "increment": "Bid increment",
+    "bidsLabel": "Bids",
+    "starts": "Starts",
+    "ends": "Ends",
+    "noEnd": "Open"
   },
   "actions": {
     "favorite": "Add to favourites",

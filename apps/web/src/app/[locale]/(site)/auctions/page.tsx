@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { AuctionGrid } from "@/components/auction/auction-card";
 import { AutoSubmitSelect } from "@/components/auto-submit";
+import { PageBanner } from "@/components/public/sections";
 import { EmptyState } from "@/components/ui/display";
 import { Pagination } from "@/components/ui/pagination";
 import { Link } from "@/i18n/navigation";
@@ -117,11 +118,24 @@ export default async function AuctionsPage({ searchParams }: { searchParams: Pro
   );
 
   return (
-    <div className="container-page py-8">
-      <div className="mb-6">
-        <h1 className="text-3xl font-semibold">{t("title")}</h1>
-        <p className="mt-2 max-w-[70ch] text-muted">{t("description")}</p>
-      </div>
+    <>
+    <PageBanner title={t("title")} description={t("description")} image="/images/content/hero-scrap-bales.jpg" />
+    <div className="container-page py-10">
+      {/* Status pills: one click between live, upcoming and ended (other filters are kept). */}
+      <nav aria-label={t("status")} className="mb-8 flex flex-wrap justify-center gap-2 rounded-2xl bg-sunken p-1.5 sm:mx-auto sm:w-fit">
+        {STATUSES.map((s) => {
+          const params = new URLSearchParams();
+          for (const [k, v] of Object.entries(sp)) if (k !== "status" && k !== "page") for (const x of many(v)) params.append(k, x);
+          if (s) params.set("status", s);
+          const qs = params.toString();
+          const active = (status ?? "") === s;
+          return (
+            <Link key={s} href={`/auctions${qs ? `?${qs}` : ""}`} aria-current={active ? "page" : undefined} className={active ? "inline-flex h-11 items-center rounded-xl bg-patina px-5 text-sm font-extrabold text-white shadow-[0_10px_25px_-8px_#087b70]" : "inline-flex h-11 items-center rounded-xl px-5 text-sm font-extrabold text-ink-2 hover:text-patina"}>
+              {statusLabel[s]}
+            </Link>
+          );
+        })}
+      </nav>
       <div className="grid gap-8 lg:grid-cols-[16rem_1fr]">
         <aside className="space-y-8">
           <details className="rounded-lg border border-line bg-surface p-4 lg:hidden" open={false}>
@@ -131,7 +145,7 @@ export default async function AuctionsPage({ searchParams }: { searchParams: Pro
             </summary>
             <div className="mt-4">{filters}</div>
           </details>
-          <div className="hidden lg:block">{filters}</div>
+          <div className="hidden rounded-2xl border border-line bg-surface p-5 shadow-raise lg:block">{filters}</div>
           {highest.items.length > 0 && (
             <section className="hidden rounded-lg border border-line bg-surface p-4 lg:block">
               <h2 className="mb-3 text-sm font-semibold">{t("highest")}</h2>
@@ -192,11 +206,12 @@ export default async function AuctionsPage({ searchParams }: { searchParams: Pro
               }
             />
           ) : (
-            <AuctionGrid items={result.items} serverNow={serverNow} className="xl:grid-cols-3" />
+            <AuctionGrid items={result.items} serverNow={serverNow} className="xl:grid-cols-2" />
           )}
           <Pagination page={result.page} totalPages={totalPages} pathname="/auctions" query={sp} />
         </section>
       </div>
     </div>
+    </>
   );
 }

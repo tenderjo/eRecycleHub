@@ -6,7 +6,16 @@
     "startsIn": "يبدأ خلال",
     "closed": "أُغلقت المزايدة",
     "bids": "{count, plural, =0 {لا مزايدات} one {مزايدة واحدة} two {مزايدتان} few {# مزايدات} many {# مزايدة} other {# مزايدة}}",
-    "platform": "eRecycleHub"
+    "platform": "eRecycleHub",
+    "details": "إظهار التفاصيل",
+    "bidNow": "زايد الآن",
+    "insurance": "مبلغ التأمين",
+    "startPrice": "مبلغ البدء",
+    "increment": "مقدار الزيادة",
+    "bidsLabel": "المزايدات",
+    "starts": "تاريخ البدء",
+    "ends": "تاريخ الانتهاء",
+    "noEnd": "مفتوح"
   },
   "actions": {
     "favorite": "أضف إلى المفضلة",

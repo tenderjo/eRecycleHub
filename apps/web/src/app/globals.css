@@ -183,6 +183,10 @@
 :lang(en) {
   --text-display--line-height: 1.12;
 }
-[INFO] Recording command outcome: printf
 
-[OK] Command outcome recorded
+/* Teal band used by page banners and the numbers strip (the photo hero layers its own veil on top of a photo). */
+.teal-band {
+  background:
+    radial-gradient(circle at 85% 10%, #55c3e940, transparent 40%),
+    linear-gradient(120deg, #0f2f33 0%, #065e56 45%, #0a9486 100%);
+}

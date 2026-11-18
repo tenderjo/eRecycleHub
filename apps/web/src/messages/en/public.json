@@ -1,12 +1,12 @@
 {
   "home": {
-    "metaTitle": "Online auctions for scrap and recyclable materials",
-    "heroTitle": "Your chance starts <hl>here</hl><dot>.</dot> <line>Bid, win, <accent>and recycle</accent></line>",
-    "heroBody": "Factories, warehouses and contractors list lots of metal, plastic, paper, e-waste and used equipment. Licensed dealers and recyclers bid in the open until the clock runs out.",
-    "heroLead": "Discover the best auctions for recyclable materials, and bid with ease, transparency and confidence.",
+    "metaTitle": "Digital scraps auction for scrap, surplus and reusable materials",
+    "heroTitle": "Buy & sell your scraps <hl>in just a click</hl><dot>.</dot>",
+    "heroBody": "eRecycleHUB is a specialized digital platform that redefines the auction experience for scrap, surplus, reusable and recyclable materials, offering businesses a secure and efficient way to buy and sell assets through sealed-bid and public auctions.",
+    "heroLead": "Seamless material sourcing at the best value. Transparent transactions, fair and competitive pricing and traceable sustainability impact across the MENA region.",
     "browse": "Browse live auctions",
     "heroBrowse": "Browse auctions",
-    "heroHow": "How does the platform work?",
+    "heroHow": "Why eRecycleHUB?",
     "closingNext": "Closing next",
     "closingEmpty": "No lots are live right now. Upcoming lots are listed below.",
     "liveNow": "{count, plural, =0 {No live lots} one {# lot live now} other {# lots live now}}",
@@ -25,22 +25,194 @@
     },
     "announcements": "Announcements",
     "seeAll": "See all",
-    "sellerTitle": "Have material to sell?",
-    "sellerBody": "Apply for a seller account. Once approved, you can list lots, set the starting price and increment, and follow every bid from your portal.",
+    "sellerTitle": "Have assets or materials to auction?",
+    "sellerBody": "Apply for a seller account. Once approved, you can list scrap, surplus and reusable materials, set the starting price and increment, and follow every bid from your portal.",
     "sellerCta": "Apply to sell",
-    "badge": "A more sustainable future starts here",
+    "badge": "Digital Scraps Auction",
     "searchBtn": "Search",
     "statLive": "Live auctions",
     "statStores": "Active stores",
     "statCategories": "Material categories",
-    "heroImageAlt": "Recycling bins in front of a green landscape and a recycling symbol",
+    "heroImageAlt": "Baled scrap metal stacked in a recycling yard",
     "statBids": "Bids placed",
     "exploreKicker": "Explore opportunities",
     "stepsKicker": "Simple steps",
-    "liveKicker": "Chances worth competing for",
-    "heroCardTitle": "New lots every day",
+    "liveKicker": "eRecycleHUB e-Auctions",
+    "heroCardTitle": "Profit with purpose",
     "heroCardHint": "Live now",
-    "searchPlaceholder": "Search for an auction, material or reference number..."
+    "searchPlaceholder": "Search for an auction, material or reference number...",
+    "allCategories": "All",
+    "auctionsTitle": "Auctions",
+    "tabsLabel": "Auction status",
+    "tabEmpty": "Nothing in this list right now. Check the other tabs or browse all auctions.",
+    "browseAll": "Browse all auctions",
+    "numbersTitle": "Our story in numbers",
+    "faqMore": "All questions",
+    "closingKicker": "Your trusted partner",
+    "closingBody": "At eRecycleHUB, your assets procurement journey is not just a transaction; it's a commitment to a greener & more sustainable world.",
+    "closingBody2": "Choose us as your trusted partner and together, let's pave the way for a future where responsible material sourcing leads the way to environmental conservation and corporate excellence."
+  },
+  "brand": {
+    "tagline": "Profit with Purpose & Positive Impact",
+    "purposeTitle": "Reducing material waste & unlocking hidden assets value",
+    "purposeBody": "Resources often go to waste instead of being recovered back into the production cycle.",
+    "message": {
+      "title": "Our message",
+      "body": "Empower our partners to strengthen their market presence through transparent and competitive bidding, streamlined transactions and data-driven insights that enhance sales performance and transform opportunities into measurable business value."
+    },
+    "mission": {
+      "title": "Our mission",
+      "body": "To disrupt the MENA scrap and secondhand industry through a transparent and trusted online auction marketplace that seamlessly connects buyers and sellers, enables efficient asset sales and purchases, addresses business needs and helps businesses maximize the value of their assets."
+    },
+    "vision": {
+      "title": "Our vision",
+      "body": "To be the leading platform for scrap trading, empowering individuals and businesses to contribute to circular economy and reduce waste while promoting sustainable practices and efficient resource recovery and management through a technology-driven ecosystem that fosters transparency, efficiency and smarter business operations."
+    },
+    "why": {
+      "title": "Why eRecycleHUB?",
+      "p1": "eRecycleHUB is a digital auction platform that connects sellers and buyers to trade assets, scrap, surplus materials and materials suitable for reuse and recycling, helping unlock their economic value and improve material circulation.",
+      "p2": "Through efficient buyer-seller matching, price discovery and structured data on listed materials, auctions and transactions conducted through the platform, eRecycleHUB helps organizations make informed decisions, identify opportunities to recover value from surplus materials and assets and improve the efficiency of material trading.",
+      "p3": "By facilitating resource recovery back into the cycle of use and production, the platform supports circular economy practices, helps extend materials lifecycle and contributes to more resource-efficient operations & sustainable practices. It also provides environmental data and indicators derived from auction activities and transactions recorded on the platform, supporting organizations in assessing material recovery and strengthening their environmental sustainability and corporate social responsibility (CSR) efforts.",
+      "more": "Explore our services"
+    },
+    "r": {
+      "r1": "Reduce",
+      "r2": "Reuse",
+      "r3": "Recycle",
+      "r4": "Repurpose",
+      "r5": "Recover",
+      "r6": "Repair",
+      "r7": "Resell",
+      "r8": "Restore",
+      "r9": "Refurbish"
+    },
+    "types": {
+      "kicker": "eRecycleHUB e-Auctions",
+      "title": "Types of auctions we offer",
+      "public": {
+        "title": "Public / open auction",
+        "body": "An open auction allows all qualified buyers to participate and submit their bids in a transparent and competitive environment. Participants can monitor the bids submitted during the auction period and adjust their offers accordingly. The auction is awarded to the winning bid based on the specified terms and criteria."
+      },
+      "sealed": {
+        "title": "Sealed-bid auction",
+        "body": "A sealed-bid auction allows participants to submit their bids confidentially within a specified period, without being able to view the bids submitted by other participants. Bids are opened and evaluated after the auction period ends, and the auction is awarded based on the specified terms and criteria."
+      }
+    }
+  },
+  "faqDefault": {
+    "kicker": "Support",
+    "title": "FAQ",
+    "body": "For any inquiries about our services and how to participate in auctions, our team is happy to support you.",
+    "group": "General",
+    "items": {
+      "q1": {
+        "q": "Can I participate in multiple auctions at the same time?",
+        "a": "Yes, you can participate in multiple auctions if you are approved for each one and have paid the deposit for each auction separately."
+      },
+      "q2": {
+        "q": "How can I know the result of the auction? Did I win or lose?",
+        "a": "You will be contacted if you win the auction, and you will also receive an email at your registered email address."
+      },
+      "q3": {
+        "q": "If I encounter a problem with the system, how can I contact technical support?",
+        "a": "You can contact customer service via the unified number on our Contact page or by email at bid@erecyclehub.com."
+      },
+      "q4": {
+        "q": "Is it necessary to pay a deposit to participate in the auction?",
+        "a": "Each auction has a different deposit requirement depending on its terms, and you must pay the deposit before participating."
+      },
+      "q5": {
+        "q": "When are the auction results announced?",
+        "a": "Auction results depend on the auction type. In live auctions, bids appear to all users in real time, then the auction owner is contacted to approve the final selling price. In closed envelope (sealed-bid) auctions, timing and procedures depend on the seller's policy: bids are opened and reviewed at a scheduled time, followed by the seller's approval of the selling price."
+      },
+      "q6": {
+        "q": "Can anyone register on the platform as a bidder?",
+        "a": "Registration is available for companies, institutions and individuals."
+      }
+    }
+  },
+  "services": {
+    "title": "Our services",
+    "fullTitle": "Resource management and environmental sustainability services",
+    "description": "eRecycleHUB adopts a digital resource trading approach focused on facilitating the exchange of scrap, surplus and materials suitable for reuse and recycling through electronic auctions.",
+    "approach": {
+      "title": "Our resource trading approach",
+      "trading": {
+        "title": "Material trading and resource recovery",
+        "intro": "The platform facilitates assets & material trading and supports opportunities to recover economic value through:",
+        "items": {
+          "connect": { "t": "Connecting sellers and buyers", "d": "Facilitating access to potential buyers through electronic auctions." },
+          "price": { "t": "Price discovery", "d": "Supporting price discovery through competitive bidding and providing a structured marketplace for material trading." },
+          "recovery": { "t": "Resource recovery", "d": "Enabling materials to re-enter the cycle of use and production by connecting sellers with buyers who may reuse or recycle them." },
+          "circular": { "t": "Circular economy support", "d": "Supporting the continued use of materials and opportunities to extend their useful life through reuse and recycling." }
+        }
+      },
+      "data": {
+        "title": "Environmental data and sustainability",
+        "body": "eRecycleHUB provides structured data and indicators derived from material listings, auction activities and transactions recorded on the platform. These data can help organizations analyze material trading activities, identify resource recovery opportunities and support their sustainability reporting."
+      }
+    },
+    "value": {
+      "title": "The value we deliver to our clients",
+      "intro": "Through eRecycleHUB, organizations can benefit from:",
+      "items": {
+        "reach": { "t": "Expanded market reach", "d": "Increasing the visibility of scrap, surplus and reusable materials among potential buyers through a digital auction platform." },
+        "bidding": { "t": "Transparent and competitive bidding", "d": "Providing a structured digital environment that facilitates competitive bidding and supports price discovery." },
+        "value": { "t": "Economic value creation", "d": "Helping organizations unlock the economic value of surplus materials and assets through improved market access and competitive auctions." },
+        "efficiency": { "t": "Operational efficiency", "d": "Simplifying the process of listing materials, reaching potential buyers and facilitating transactions through a dedicated digital platform." },
+        "circular": { "t": "Circular economy support", "d": "Facilitating the trading of materials that may be reused or recycled, supporting resource circulation and opportunities to extend their useful life." },
+        "insights": { "t": "Data-driven insights", "d": "Providing structured information on material listings, auction activities and transactions recorded on the platform to support business analysis and sustainability reporting." },
+        "csr": { "t": "Sustainability and CSR support", "d": "Providing information that can contribute to organizations' environmental sustainability and corporate social responsibility (CSR) efforts." }
+      }
+    },
+    "eauctions": {
+      "title": "eRecycleHUB e-Auctions",
+      "intro": "eRecycleHUB is a specialized digital platform for advertising and facilitating auctions of scrap, surplus, reusable, recyclable, and other materials and assets. Our role is to connect sellers with potential buyers through a transparent and competitive digital auction environment.",
+      "items": {
+        "listings": { "t": "Transparent auction listings", "d": "We provide a structured digital marketplace where organizations can advertise their available scrap, surplus, and other materials and assets for auction, enabling potential buyers to access relevant information and participate in a transparent and competitive bidding process." },
+        "connect": { "t": "Connecting sellers with buyers", "d": "eRecycleHUB facilitates connections between organizations offering materials and assets for auction and qualified buyers interested in purchasing them. The platform helps expand market reach and create opportunities for materials and assets to be sold and reused rather than remaining idle or being treated as waste." },
+        "recovery": { "t": "Supporting resource recovery & the circular economy", "d": "By facilitating the sale and redistribution of scrap, surplus, reusable and recyclable materials, eRecycleHUB supports the recovery and continued use of valuable resources. This can contribute to extending material lifecycles, reducing unnecessary disposal and supporting circular economy practices." }
+      }
+    },
+    "data": {
+      "title": "Circular economy and sustainability data",
+      "intro": "eRecycleHUB provides platform-derived data and analytics that help businesses understand material trading activity, identify opportunities for resource recovery and support circular economy and sustainability reporting.",
+      "listIntro": "The data available to clients may include:",
+      "items": {
+        "listing": { "t": "Material listing data", "d": "Types of materials and surplus assets listed on the platform, their recorded quantities, condition descriptions and available specifications." },
+        "sales": { "t": "Material sales and transaction data", "d": "Quantities recorded as sold through completed platform transactions, transaction values, sale prices and auction outcomes." },
+        "secondary": { "t": "Secondary-market trading data", "d": "Data on materials and surplus assets sold through the platform, supporting analysis of their potential entry into secondary markets." },
+        "category": { "t": "Material category and quantity analysis", "d": "Breakdown of listed and sold materials by category, quantity, condition and other attributes recorded in the platform." },
+        "trends": { "t": "Market demand and price trends", "d": "Historical bidding activity, bid counts, winning bids and price trends where such data are available." },
+        "recovery": { "t": "Resource recovery opportunity indicators", "d": "Identification of material categories and surplus assets that may offer opportunities for reuse, recycling or other resource recovery pathways, based on available descriptions and classifications." },
+        "kpi": { "t": "Circular economy performance indicators", "d": "Platform-based indicators such as the quantity and value of materials sold through the platform, the share of listed materials recorded as sold and the distribution of transactions across material categories." },
+        "location": { "t": "Location-based trading insights", "d": "Analysis of material listings and trading activity by recorded seller or buyer location, where available." },
+        "reporting": { "t": "Sustainability reporting support", "d": "Structured data that businesses can use as an input to internal sustainability reports, ESG disclosures and circular economy assessments, subject to their reporting requirements and verification needs." },
+        "impact": { "t": "Data for future environmental impact assessment", "d": "Transaction and material data that may support future estimates of environmental benefits, such as avoided emissions, resource savings or landfill diversion, where additional verified outcome data and an appropriate calculation methodology are available." }
+      }
+    },
+    "features": {
+      "title": "Technical features & functional capabilities",
+      "items": {
+        "access": { "t": "Centralized access to auction opportunities", "d": "A digital hub aggregating auction and bid opportunities from public and private entities, enabling users to access all material auctions in one place." },
+        "matching": { "t": "Buyer–seller matching & collaboration", "d": "Smart matching based on material type, quantity, quality and location preferences. The system promotes collaboration and data sharing among recyclers, suppliers and stakeholders for greater transparency." },
+        "privacy": { "t": "Data privacy & security", "d": "Advanced data protection protocols ensure all trade and user information is securely managed." },
+        "sustainable": { "t": "Promoting sustainable material management", "d": "By streamlining transactions and giving micro and small enterprises (MSEs) direct market access, the platform helps optimize the use of resources by facilitating efficient exchange of scrap & second-hand materials while diverting them away from landfills, increases resource efficiency and reduces environmental pollution." },
+        "digital": { "t": "Driving digital transformation", "d": "Simplifies administrative tasks, reduces paperwork and promotes digital inclusion among small recyclers and material traders." },
+        "mse": { "t": "Supporting MSE growth & competitiveness", "d": "Provides low-barrier entry to formal markets, lowers transaction costs and connects traders directly with buyers to ensure fair pricing and better margins." },
+        "expansion": { "t": "Market expansion", "d": "Enables local traders to access regional and international buyers interested in scrap, recycled, reusable & second-hand materials, expanding business opportunities." },
+        "compliance": { "t": "Corporate sustainability & compliance", "d": "Supports companies in achieving sustainability targets and regulatory compliance through transparent transactions and traceable resource recovery." },
+        "partners": { "t": "Partnership ecosystem", "d": "Collaborates with local governments, scrap companies and NGOs to build a strong circular economy network supporting business resilience and inclusive green growth." },
+        "transparency": { "t": "Market efficiency & transparency", "d": "Creates a competitive and regulated auction system that ensures fair pricing, reduces information asymmetry and builds trust." },
+        "growth": { "t": "Business growth & revenue generation", "d": "Expands sales volume, improves cash flow and enhances profitability for small and medium scrap traders through access to larger, more dynamic markets." },
+        "insights": { "t": "Climate & circular economy market insights", "d": "Market intelligence, data analysis and statistics related to resource recovery activities, digital records of material transactions including quantities, types and destinations, helping businesses report their disposal activities, track sustainability KPIs and make informed decisions." },
+        "intermediaries": { "t": "Fewer intermediaries", "d": "Minimizes the need for intermediaries by connecting buyers and sellers directly, which can significantly reduce transaction fees and logistical costs associated with traditional scrap and recyclable material sales." }
+      }
+    },
+    "insights": {
+      "title": "Providing recycling market insights",
+      "body": "eRecycleHUB offers data analysis and statistics related to sustainable & circular economy activities in Jordan, assists in creating digital records of material transactions and encourages industries to adopt more responsible and resource-efficient practices."
+    }
   },
   "stores": {
     "title": "Stores",
@@ -61,9 +233,99 @@
     "empty": "Client logos will appear here."
   },
   "about": {
-    "title": "About eRecycleHub",
+    "title": "About eRecycleHUB",
     "bidders": "{count}k registered bidders",
-    "empty": "This page hasn't been written yet."
+    "empty": "This page hasn't been written yet.",
+    "kicker": "Overview",
+    "lead": "AI-driven digital inventory for circular supply chain sourcing",
+    "overview": {
+      "p1": "eRecycleHUB is a data-driven e-auction platform that digitizes scrap trading, recyclable and reusable materials, second-hand goods and equipment, surplus inventory and other commodities and assets across industrial, commercial, agricultural, healthcare, construction and demolition and other sectors.",
+      "p2": "The platform combines e-auction technology, AI-powered classification and data analytics to enable transparent and competitive transactions, best price discovery, efficient buyer-seller matching and structured material and transaction data. By digitizing the trading process, eRecycleHUB enables businesses to identify and recover the economic value of underutilized materials, surplus resources, used assets and scrap while facilitating their movement into secondary markets.",
+      "p3": "Beyond facilitating transactions, eRecycleHUB is designed to transform auction-generated data into materials, resource and circular economy intelligence. The platform automatically captures data such as material categories and quantities, material condition and specifications, locations, auction activity, bidder participation, winning prices, transaction values, buyer activity and historical market trends.",
+      "p4": "The platform also generates structured environmental and sustainability-related data from auction activity, including quantities and categories of materials traded, materials reintroduced into secondary markets, reusable assets sold, economic value recovered, material flows by site and period, and secondary-market activity. These data can support environmental reporting, circular economy reporting, resource-efficiency monitoring, ESG reporting and sustainability performance analysis.",
+      "p5": "eRecycleHUB is designed to serve as a digital infrastructure for electronic auctions within the circular economy, which aims to keep products, materials and resources in use for as long as possible through reuse, repair, refurbishment, remanufacturing, recycling and resource recovery while reducing waste generation and the consumption of virgin raw materials."
+    },
+    "categoriesTitle": "Circular economy categories",
+    "categoriesBody": "Through AI-supported data analysis, eRecycleHUB can classify materials and assets into predefined circular economy categories, supporting pathways for reuse, refurbishment, recycling and resource recovery.",
+    "categories": {
+      "c1": "Reusable materials and assets",
+      "c2": "Refurbishable equipment",
+      "c3": "Recyclable materials",
+      "c4": "Recoverable materials",
+      "c5": "Secondary raw materials",
+      "c6": "Surplus inventory",
+      "c7": "Used products and equipment",
+      "c8": "End-of-use assets",
+      "c9": "Scrap materials"
+    },
+    "gap": {
+      "title": "Closing the gap across MENA",
+      "p1": "Across the Middle East and North Africa (MENA) region, the trade in scrap materials, reusable materials, second-hand goods, equipment and surplus resources remains highly fragmented, relying on dealer networks, informal channels, manual negotiations and disconnected marketplaces.",
+      "p2": "eRecycleHUB addresses these gaps by creating a transparent, data-driven digital marketplace for secondary materials, surplus resources and used assets, helping businesses recover economic value, improve resource utilization and keep materials and assets in circulation.",
+      "p3": "Our long-term vision is to establish regional digital infrastructure for circular materials markets where commercial transactions generate reliable data that supports resource efficiency, circular economy development, sustainability management and more traceable environmental outcomes."
+    },
+    "jordan": {
+      "title": "Resource management in Jordan",
+      "stat1": "2.4M",
+      "stat1Label": "metric tons of solid waste generated every year, most of it ending up in landfills",
+      "stat2": "7%",
+      "stat2Label": "is all that gets recycled",
+      "p1": "Looking at the waste industry from the ground up, we find a fragmented sector with high levels of informality.",
+      "p2": "Jordan's resource recovery market is underdeveloped due to fragmented material flows, limited digital access, inconsistent pricing, weak coordination between suppliers and buyers, and the absence of transparent, traceable and efficient trading mechanisms."
+    },
+    "scenario": {
+      "title": "The current scenario: wasted resources & lost economic opportunities",
+      "p1": "Most of the time, materials are sold at very low prices simply to avoid storage costs or to free up space. Materials that remain in storage for too long, often in unsuitable conditions, risk deterioration or damage, reducing their usability, resale potential and overall value. Sellers often lack awareness of the true market value of their recyclable or surplus materials and sell at undervalued rates.",
+      "p2": "In many cases, large quantities of valuable materials end up discarded or sent to landfills because sellers cannot find suitable buyers or are unaware of existing market demand. This leads to financial losses, more landfill waste and barriers to inclusive participation in the circular economy."
+    },
+    "problem": {
+      "title": "Problem statement",
+      "intro": "Jordan's resource recovery and recycling sector is highly fragmented and operates largely through informal networks. The absence of structured, transparent and efficient channels for trading scrap, reusable equipment, machinery and surplus materials results in lost value, reduced resource recovery and preventable landfill expansion.",
+      "items": {
+        "structural": { "t": "Structural gap & weak resource recovery systems", "d": "There is no unified, efficient mechanism to redirect surplus, reusable and second-hand materials back into production cycles, leading to low resource recovery rates, high landfill dependence and increased pollution and resource depletion." },
+        "access": { "t": "Limited market access & unequal opportunity", "d": "The market is dominated by middlemen and informal brokers. Small suppliers, SMEs, factories and waste pickers receive below-market prices, buyers face limited supply visibility and inconsistent pricing, and no centralized system connects them efficiently." },
+        "digital": { "t": "Digital divide & information gaps", "d": "Scrap and surplus trading still happens through word of mouth, in-person negotiation and informal phone networks, with no standardized data on availability, specifications, pricing or location, resulting in high search costs and market opacity." },
+        "traceability": { "t": "Lack of traceability & transparency", "d": "Without digital traceability, material flows cannot be monitored or verified, trust issues persist over quality and payment, and companies cannot report on circularity, resource recovery or ESG targets." },
+        "inclusion": { "t": "Social exclusion in market participation", "d": "Women, youth, refugees and informal collectors are excluded from structured trade due to lack of market access, digital literacy, trust and formal networks." }
+      }
+    },
+    "priority": {
+      "title": "Why this is a priority",
+      "body": "Inefficient resource recovery and unsustainable material disposal remain critical challenges with far-reaching environmental, economic and social consequences. Strengthening materials recovery, adopting sustainable resource management and raising awareness are key to building a circular and sustainable future.",
+      "env": {
+        "title": "Environmental impact",
+        "i1": "Resource depletion: valuable materials and assets are not recovered or reused, increasing demand for virgin raw materials.",
+        "i2": "Land and water pollution: mismanaged materials end up in landfills or open dumping sites, contaminating ecosystems.",
+        "i3": "Climate emissions: decomposing organic and mixed materials release methane and other greenhouse gases.",
+        "i4": "Ecosystem stress: expanding disposal sites disrupt natural habitats and biodiversity."
+      },
+      "econ": {
+        "title": "Economic impact",
+        "i1": "Lost value: reusable equipment, surplus commodities and recoverable materials often go unused, representing missed revenue.",
+        "i2": "Higher operational costs: industries and municipalities spend more on disposal and procurement, driving more raw material extraction.",
+        "i3": "Reduced production efficiency: lack of material recovery inflates supply chain and manufacturing costs."
+      },
+      "social": {
+        "title": "Social impact",
+        "i1": "Public exposure to risks: poorly managed material sites increase exposure to contaminants and hazardous conditions.",
+        "i2": "Community burden: disposal facilities affect nearby communities with pollution, odors and reduced land value.",
+        "i3": "Unequal access: low-income areas face greater exposure and fewer recovery or reuse services."
+      }
+    },
+    "solution": {
+      "title": "Our solution: the eRecycleHUB e-auction platform",
+      "intro": "eRecycleHUB is an e-auction platform for surplus, reusable, second-hand equipment, machinery, recyclable and scrap materials, designed to digitize and maximize resource recovery and extend material life cycles. We link the supply-demand mismatch across the MENA materials value chain, enabling small, medium and large scrap traders, recyclers and manufacturers to list, auction and procure recoverable resources transparently and efficiently by:",
+      "items": {
+        "i1": "Offering access to verified users & market data on material availability, specifications and location.",
+        "i2": "Using data-driven AI features that turn the platform into a regional intelligence hub for circular economy operations, enabling automated matching, carbon tracking and traceability.",
+        "i3": "Improving liquidity and turnover of scrap & surplus materials and increasing transparency and traceability across the material loop.",
+        "i4": "Recovering value that would otherwise be lost to landfill, keeping valuable materials circulating in the economy.",
+        "i5": "Reducing sourcing and disposal costs for businesses by connecting suppliers and buyers directly.",
+        "i6": "Providing measurable circular economy and ESG impact that supports the transition from a linear to a circular, resource-efficient economy."
+      },
+      "outro": "eRecycleHUB bridges this mismatch gap: our platform acts as a smart auction marketplace, enabling businesses and institutions to list, bid and procure materials at the best price."
+    },
+    "cmsTitle": "More about us"
   },
   "benefits": {
     "title": "Membership benefits",
@@ -86,7 +348,7 @@
   },
   "faq": {
     "title": "Frequently asked questions",
-    "description": "Answers about accounts, wallets, bidding and selling.",
+    "description": "For any inquiries about our services and how to participate in auctions, our team is happy to support you.",
     "empty": "No questions have been published yet.",
     "search": "Search questions",
     "noMatch": "No questions match “{q}”.",

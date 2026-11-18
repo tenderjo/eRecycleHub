@@ -15,7 +15,7 @@ const isActive = (pathname: string, l: NavLink) => (l.exact ? pathname === l.hre
 export function NavLinks({ links, label }: { links: NavLink[]; label: string }) {
   const pathname = usePathname();
   return (
-    <nav aria-label={label} className="hidden lg:block">
+    <nav aria-label={label} className="hidden xl:block">
       <ul className="flex items-center gap-1">
         {links.map((l) => (
           <li key={l.href}>
@@ -24,7 +24,7 @@ export function NavLinks({ links, label }: { links: NavLink[]; label: string }) 
               prefetch={false}
               aria-current={isActive(pathname, l) ? "page" : undefined}
               className={cn(
-                "inline-flex h-10 items-center rounded-md px-3 text-sm font-bold text-ink-2 hover:bg-patina-50 hover:text-patina",
+                "inline-flex h-10 items-center rounded-xl px-3.5 text-sm font-bold text-ink-2 hover:bg-patina-50 hover:text-patina",
                 isActive(pathname, l) && "bg-patina text-white shadow-[0_8px_20px_#087b7024] hover:bg-patina hover:text-white",
               )}
             >
@@ -51,7 +51,7 @@ export function MobileNav({ links, signedIn }: { links: NavLink[]; signedIn: boo
   ];
   return (
     <D.Root open={open} onOpenChange={setOpen}>
-      <D.Trigger className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-sunken lg:hidden" aria-label={t("nav.menu")}>
+      <D.Trigger className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sunken xl:hidden" aria-label={t("nav.menu")}>
         <MenuIcon className="h-5 w-5" />
       </D.Trigger>
       <D.Portal>
