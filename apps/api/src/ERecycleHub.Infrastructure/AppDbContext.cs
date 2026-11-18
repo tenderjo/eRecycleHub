@@ -312,6 +312,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.Property(x => x.Key).HasMaxLength(100);
             e.Property(x => x.ValueEn).HasColumnType("nvarchar(max)");
             e.Property(x => x.ValueAr).HasColumnType("nvarchar(max)");
+            FileFk(e, x => x.ImageFileId);
         });
         m.Entity<TranslationOverride>(e =>
         {

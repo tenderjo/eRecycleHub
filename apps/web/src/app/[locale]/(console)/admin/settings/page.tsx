@@ -17,7 +17,7 @@ export default async function Page() {
       <PageHeader title={t("title")} description={t("description")} />
       <CmsManager
         path="/api/admin/settings"
-        multipart={false}
+        multipart={true}
         labels={labels}
         titleKeys={["titleEn", "key"]}
         defaults={{}}
@@ -33,7 +33,7 @@ export default async function Page() {
           { key: "titleEn", label: f("titleEn") },
           { key: "titleAr", label: f("titleAr") },
         ]}
-        rows={rows}
+        rows={rows.filter((r) => !r.key.startsWith("image-"))}
       />
     </>
   );

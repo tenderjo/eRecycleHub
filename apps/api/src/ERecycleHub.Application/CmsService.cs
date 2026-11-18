@@ -25,7 +25,7 @@ public sealed record FaqCategoryInput(string? TitleEn, string? TitleAr, int Sort
 public sealed record AdminFaq(int Id, int CategoryId, string QuestionEn, string QuestionAr, string? AnswerEn, string? AnswerAr, int SortOrder, bool IsActive);
 public sealed record FaqInput(int CategoryId, string? QuestionEn, string? QuestionAr, string? AnswerEn, string? AnswerAr, int SortOrder, bool IsActive);
 public sealed record ContactInfoInput(string? Mobile, string? Address, string? Email, string? MapUrl, string? Facebook, string? Instagram, string? Twitter, string? Linkedin);
-public sealed record AdminSetting(int Id, string Key, string? TitleEn, string? TitleAr, string? ValueEn, string? ValueAr);
+public sealed record AdminSetting(int Id, string Key, string? TitleEn, string? TitleAr, string? ValueEn, string? ValueAr, Guid? ImageFileId);
 public sealed record SettingInput(string? Key, string? TitleEn, string? TitleAr, string? ValueEn, string? ValueAr);
 public sealed record MessageDto(int Id, string Name, string Email, string? Mobile, string Message, bool IsRead, DateTime CreatedAtUtc);
 public sealed record TranslationDto(string Locale, string Key, string Value, DateTime UpdatedAtUtc);
@@ -326,15 +326,16 @@ public sealed class CmsService(AppDbContext db, FileService files, TimeProvider 
 
     // ---------- settings ----------
     public Task<List<AdminSetting>> SettingsAsync(CancellationToken ct = default) =>
-        db.Settings.AsNoTracking().OrderBy(s => s.Key).Select(s => new AdminSetting(s.Id, s.Key, s.TitleEn, s.TitleAr, s.ValueEn, s.ValueAr)).ToListAsync(ct);
+        db.Settings.AsNoTracking().OrderBy(s => s.Key).Select(s => new AdminSetting(s.Id, s.Key, s.TitleEn, s.TitleAr, s.ValueEn, s.ValueAr, s.ImageFileId)).ToListAsync(ct);
 
-    public async Task<int> SaveSettingAsync(Actor admin, int? id, SettingInput i, CancellationToken ct = default)
+    public async Task<int> SaveSettingAsync(Actor admin, int? id, SettingInput i, UploadInput? image, CancellationToken ct = default)
     {
         var key = Normalize.Text(i.Key)?.ToLowerInvariant();
         if (key is null || key.Length > 100 || !key.All(ch => char.IsAsciiLetterOrDigit(ch) || ch == '-')) throw new AppException("setting.invalid_key");
         if (await db.Settings.AnyAsync(s => s.Key == key && s.Id != (id ?? 0), ct)) throw AppException.Conflict("setting.key_taken");
         var s = id is null ? db.Settings.Add(new Setting { Key = key }).Entity : await FindAsync(db.Settings, id.Value, ct);
         s.Key = key; s.TitleEn = Normalize.Text(i.TitleEn); s.TitleAr = Normalize.Text(i.TitleAr); s.ValueEn = RichText.Sanitize(i.ValueEn); s.ValueAr = RichText.Sanitize(i.ValueAr);
+        s.ImageFileId = await files.SaveOptionalAsync(image, FileCategory.Cms, admin.UserId, s.ImageFileId, ct);
         await SaveAsync(admin, id is null ? "setting.create" : "setting.update", nameof(Setting), () => s.Id, ct);
         return s.Id;
     }

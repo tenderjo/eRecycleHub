@@ -13,6 +13,7 @@ import type { Schema } from "@/lib/api/types";
 import { fileUrl, nowMs, number, pick } from "@/lib/format";
 import { parseHeroTitle, type HeroTone } from "@/lib/hero-title";
 import { alternates } from "@/lib/seo";
+import { siteImages } from "@/lib/site-images";
 
 export async function generateMetadata(): Promise<Metadata> {
   const [t, locale] = await Promise.all([getTranslations("public.home"), getLocale()]);
@@ -35,7 +36,7 @@ function HeroLink({ href, className, children }: { href: string; className: stri
 }
 
 export default async function HomePage() {
-  const [t, tb, tf, tc, locale, client, countryId] = await Promise.all([
+  const [t, tb, tf, tc, locale, client, countryId, img] = await Promise.all([
     getTranslations("public.home"),
     getTranslations("public.brand"),
     getTranslations("public.faqDefault"),
@@ -43,6 +44,7 @@ export default async function HomePage() {
     getLocale(),
     serverApi(),
     getCountryId(),
+    siteImages(),
   ]);
   const [home, faqGroups, ...rows] = await Promise.all([
     load(client.GET("/api/home", { params: { query: { countryId } } })),
@@ -213,11 +215,11 @@ export default async function HomePage() {
       <section className="container-page grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2">
         <div className="relative grid grid-cols-2 gap-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/content/steel-profiles.jpg" alt="" loading="lazy" className="row-span-2 h-full min-h-80 w-full rounded-3xl object-cover" />
+          <img src={img("home-why-1").src} alt={img("home-why-1").alt} loading="lazy" className="row-span-2 h-full min-h-80 w-full rounded-3xl object-cover" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/content/tanks.jpg" alt="" loading="lazy" className="aspect-[4/3] w-full rounded-3xl object-cover" />
+          <img src={img("home-why-2").src} alt={img("home-why-2").alt} loading="lazy" className="aspect-[4/3] w-full rounded-3xl object-cover" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/content/metal-parts.jpg" alt="" loading="lazy" className="aspect-[4/3] w-full rounded-3xl object-cover" />
+          <img src={img("home-why-3").src} alt={img("home-why-3").alt} loading="lazy" className="aspect-[4/3] w-full rounded-3xl object-cover" />
           <span className="absolute -bottom-5 start-1/2 grid h-20 w-20 -translate-x-1/2 place-items-center rounded-full border-4 border-ground bg-lime text-patina-900 shadow-lg rtl:translate-x-1/2" aria-hidden>
             <Recycle className="h-9 w-9" />
           </span>
@@ -296,7 +298,7 @@ export default async function HomePage() {
       <section className="container-page pt-16 sm:pt-20">
         <div className="relative grid overflow-hidden rounded-[2rem] bg-patina-900 text-white lg:grid-cols-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/content/machinery.jpg" alt="" loading="lazy" className="h-64 w-full object-cover lg:h-full" />
+          <img src={img("home-closing").src} alt={img("home-closing").alt} loading="lazy" className="h-64 w-full object-cover lg:h-full" />
           <div className="relative p-8 sm:p-12">
             <span className="text-sm font-extrabold text-lime">{t("closingKicker")}</span>
             <p className="mt-3 text-xl font-black leading-9 sm:text-2xl sm:leading-10">{t("closingBody")}</p>

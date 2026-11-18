@@ -23,7 +23,7 @@ public sealed record BenefitDto(int Id, string TitleEn, string TitleAr, string? 
 public sealed record FaqDto(int Id, string QuestionEn, string QuestionAr, string? AnswerEn, string? AnswerAr);
 public sealed record FaqCategoryDto(int Id, string TitleEn, string TitleAr, IReadOnlyList<FaqDto> Faqs);
 public sealed record ContactInfoDto(int Id, int CountryId, string? Mobile, string? Address, string? Email, string? MapUrl, string? Facebook, string? Instagram, string? Twitter, string? Linkedin);
-public sealed record SettingDto(string Key, string? TitleEn, string? TitleAr, string? ValueEn, string? ValueAr);
+public sealed record SettingDto(string Key, string? TitleEn, string? TitleAr, string? ValueEn, string? ValueAr, Guid? ImageFileId);
 public sealed record HowToDto(IReadOnlyList<StepDto> Steps, string? GuidelinesVideoUrl);
 public sealed record ContactInput(string Name, string Email, string? Mobile, string Message);
 
@@ -149,7 +149,12 @@ public sealed class PublicContent(AppDbContext db, AuctionQueries auctions, Time
     }
 
     public Task<SettingDto?> SettingAsync(string key, CancellationToken ct = default) =>
-        db.Settings.AsNoTracking().Where(s => s.Key == key).Select(s => new SettingDto(s.Key, s.TitleEn, s.TitleAr, s.ValueEn, s.ValueAr)).FirstOrDefaultAsync(ct);
+        db.Settings.AsNoTracking().Where(s => s.Key == key).Select(s => new SettingDto(s.Key, s.TitleEn, s.TitleAr, s.ValueEn, s.ValueAr, s.ImageFileId)).FirstOrDefaultAsync(ct);
+
+    /// <summary>Page photos chosen in Admin > Page images (settings keyed "image-…" that have a picture).</summary>
+    public Task<List<SettingDto>> ImagesAsync(CancellationToken ct = default) =>
+        db.Settings.AsNoTracking().Where(s => s.Key.StartsWith("image-") && s.ImageFileId != null)
+            .Select(s => new SettingDto(s.Key, s.TitleEn, s.TitleAr, null, null, s.ImageFileId)).ToListAsync(ct);
 
     public async Task SubmitContactAsync(ContactInput input, CancellationToken ct = default)
     {

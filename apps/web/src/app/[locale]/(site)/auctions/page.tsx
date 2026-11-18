@@ -10,6 +10,7 @@ import { Link } from "@/i18n/navigation";
 import { getCountryId, load, serverApi } from "@/lib/api/server";
 import { fileUrl, money, nowMs, pick } from "@/lib/format";
 import { alternates } from "@/lib/seo";
+import { siteImages } from "@/lib/site-images";
 
 type Search = Record<string, string | string[] | undefined>;
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) || undefined;
@@ -27,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AuctionsPage({ searchParams }: { searchParams: Promise<Search> }) {
   const sp = await searchParams;
-  const [t, tc, locale, client, countryId] = await Promise.all([getTranslations("auction.list"), getTranslations("common"), getLocale(), serverApi(), getCountryId()]);
+  const [t, tc, locale, client, countryId, img] = await Promise.all([getTranslations("auction.list"), getTranslations("common"), getLocale(), serverApi(), getCountryId(), siteImages()]);
   const status = STATUSES.includes(one(sp.status) as never) ? one(sp.status) : undefined;
   const sort = SORTS.includes(one(sp.sort) as never) ? one(sp.sort) : undefined;
   const period = PERIODS.includes(one(sp.period) as never) ? one(sp.period) : undefined;
@@ -119,7 +120,7 @@ export default async function AuctionsPage({ searchParams }: { searchParams: Pro
 
   return (
     <>
-    <PageBanner title={t("title")} description={t("description")} image="/images/content/hero-scrap-bales.jpg" />
+    <PageBanner title={t("title")} description={t("description")} image={img("auctions-banner").src} />
     <div className="container-page py-10">
       {/* Status pills: one click between live, upcoming and ended (other filters are kept). */}
       <nav aria-label={t("status")} className="mb-8 flex flex-wrap justify-center gap-2 rounded-2xl bg-sunken p-1.5 sm:mx-auto sm:w-fit">

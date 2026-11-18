@@ -1234,6 +1234,9 @@ namespace ERecycleHub.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<Guid?>("ImageFileId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Key")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -1256,6 +1259,8 @@ namespace ERecycleHub.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ImageFileId");
 
                     b.HasIndex("Key")
                         .IsUnique();
@@ -2040,6 +2045,14 @@ namespace ERecycleHub.Infrastructure.Migrations
                     b.Navigation("Auction");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ERecycleHub.Domain.Setting", b =>
+                {
+                    b.HasOne("ERecycleHub.Domain.StoredFile", null)
+                        .WithMany()
+                        .HasForeignKey("ImageFileId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("ERecycleHub.Domain.Slider", b =>

@@ -7,6 +7,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { AuctionTypes, FeatureGrid, PageBanner, RStrip, SectionTitle, entries } from "@/components/public/sections";
 import { Link } from "@/i18n/navigation";
 import { alternates } from "@/lib/seo";
+import { siteImages } from "@/lib/site-images";
 
 export async function generateMetadata(): Promise<Metadata> {
   const [t, locale] = await Promise.all([getTranslations("public.services"), getLocale()]);
@@ -16,12 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
 type Item = { t: string; d: string };
 
 export default async function ServicesPage() {
-  const [t, tb, th] = await Promise.all([getTranslations("public.services"), getTranslations("public.brand"), getTranslations("public.home")]);
+  const [t, tb, th, img] = await Promise.all([getTranslations("public.services"), getTranslations("public.brand"), getTranslations("public.home"), siteImages()]);
   const list = (key: string) => entries<Item>(t.raw(key));
 
   return (
     <>
-      <PageBanner kicker={t("title")} title={t("fullTitle")} description={t("description")} image="/images/content/crane.jpg" />
+      <PageBanner kicker={t("title")} title={t("fullTitle")} description={t("description")} image={img("services-banner").src} />
 
       {/* Why + approach */}
       <section className="container-page grid gap-12 py-16 lg:grid-cols-2">

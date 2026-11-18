@@ -198,8 +198,12 @@ public static class AdminEndpoints
         g.MapDelete("/contact-info/{id:int}", async (int id, HttpContext ctx, CmsService c, CancellationToken ct) => { await c.DeleteContactInfoAsync(ctx.Actor(), id, ct); return Results.NoContent(); });
 
         g.MapGet("/settings", (CmsService c, CancellationToken ct) => c.SettingsAsync(ct));
-        g.MapPost("/settings", async (SettingInput d, HttpContext ctx, CmsService c, CancellationToken ct) => new IdResponse(await c.SaveSettingAsync(ctx.Actor(), null, d, ct)));
-        g.MapPut("/settings/{id:int}", async (int id, SettingInput d, HttpContext ctx, CmsService c, CancellationToken ct) => new IdResponse(await c.SaveSettingAsync(ctx.Actor(), id, d, ct)));
+        g.MapPost("/settings", async (HttpContext ctx, CmsService c, CancellationToken ct) =>
+        { var (d, f) = await ctx.Request.ReadMultipartAsync<SettingInput>(ct); return new IdResponse(await c.SaveSettingAsync(ctx.Actor(), null, d, f.Upload("image"), ct)); })
+            .Accepts<SettingInput>("multipart/form-data").Produces<IdResponse>();
+        g.MapPut("/settings/{id:int}", async (int id, HttpContext ctx, CmsService c, CancellationToken ct) =>
+        { var (d, f) = await ctx.Request.ReadMultipartAsync<SettingInput>(ct); return new IdResponse(await c.SaveSettingAsync(ctx.Actor(), id, d, f.Upload("image"), ct)); })
+            .Accepts<SettingInput>("multipart/form-data").Produces<IdResponse>();
         g.MapDelete("/settings/{id:int}", async (int id, HttpContext ctx, CmsService c, CancellationToken ct) => { await c.DeleteSettingAsync(ctx.Actor(), id, ct); return Results.NoContent(); });
 
         g.MapGet("/messages", (bool? unread, int? page, CmsService c, CancellationToken ct) => c.MessagesAsync(unread, new PageQuery(page ?? 1, 20), ct));

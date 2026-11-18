@@ -21,7 +21,7 @@ public sealed class WebContractSmokeTests
         using var client = factory.CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false, BaseAddress = new Uri("https://localhost") });
 
         var routes = factory.Services.GetRequiredService<EndpointDataSource>().Endpoints.OfType<RouteEndpoint>().ToArray();
-        foreach (var path in new[] { "/api/auth/me", "/api/content/settings/{key}", "/api/content/contact-info" })
+        foreach (var path in new[] { "/api/auth/me", "/api/content/settings/{key}", "/api/content/images", "/api/content/contact-info" })
         {
             var endpoint = Assert.Single(routes, e => e.RoutePattern.RawText == path && e.Metadata.GetMetadata<IHttpMethodMetadata>()?.HttpMethods.Contains("GET") == true);
             Assert.NotNull(endpoint.Metadata.GetMetadata<IAllowAnonymous>());

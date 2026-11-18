@@ -114,6 +114,35 @@
       "isActive": "Shown on the homepage (untick to go back to the built-in hero without losing your text)"
     }
   },
+  "images": {
+    "title": "Page images",
+    "description": "The photos on the homepage, About, Services and Auctions pages. Pick a spot, upload a picture, and it replaces the built-in photo. Delete an entry to bring the built-in photo back.",
+    "add": "Replace a photo",
+    "empty": "All pages show their built-in photos.",
+    "deleteTitle": "Remove this picture?",
+    "deleteBody": "The page goes back to its built-in photo.",
+    "fields": {
+      "slot": "Where it appears",
+      "image": "Picture",
+      "imageHint": "JPG, PNG or WebP. Landscape pictures at least 1600px wide look best.",
+      "altEn": "Description for screen readers (English)",
+      "altAr": "Description for screen readers (Arabic)",
+      "altHint": "Leave empty if the picture is only decorative."
+    },
+    "slots": {
+      "home-why-1": "Homepage · Why eRecycleHUB (large photo)",
+      "home-why-2": "Homepage · Why eRecycleHUB (top small photo)",
+      "home-why-3": "Homepage · Why eRecycleHUB (bottom small photo)",
+      "home-closing": "Homepage · Seller call-to-action",
+      "about-banner": "About · Page banner",
+      "about-intro-1": "About · Overview (first photo)",
+      "about-intro-2": "About · Overview (second photo)",
+      "about-gap": "About · The market gap",
+      "about-solution": "About · Our solution",
+      "services-banner": "Services · Page banner",
+      "auctions-banner": "Auctions · Page banner"
+    }
+  },
   "about": {
     "title": "About page",
     "description": "The text, pictures and numbers on the About page.",

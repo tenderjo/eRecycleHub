@@ -147,6 +147,8 @@ public class Setting
     public string? TitleAr { get; set; }
     public string? ValueEn { get; set; }
     public string? ValueAr { get; set; }
+    /// <summary>Optional picture; settings keyed "image-…" replace the photos on the public pages.</summary>
+    public Guid? ImageFileId { get; set; }
 }
 
 /// <summary>Administrator override of a UI message (replaces editing the legacy .resx files on the server).</summary>

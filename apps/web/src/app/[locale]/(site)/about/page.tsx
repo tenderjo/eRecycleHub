@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { load, serverApi } from "@/lib/api/server";
 import { cn, fileUrl, number, pick } from "@/lib/format";
 import { alternates } from "@/lib/seo";
+import { siteImages, type SiteImageSlot } from "@/lib/site-images";
 
 export async function generateMetadata(): Promise<Metadata> {
   const [t, locale] = await Promise.all([getTranslations("public.about"), getLocale()]);
@@ -20,18 +21,18 @@ const IMPACT = [
 ] as const;
 
 export default async function AboutPage() {
-  const [t, tc, locale, client] = await Promise.all([getTranslations("public.about"), getTranslations("common"), getLocale(), serverApi()]);
+  const [t, tc, locale, client, photo] = await Promise.all([getTranslations("public.about"), getTranslations("common"), getLocale(), serverApi(), siteImages()]);
   // Sections written in Admin > About still appear, below the documented company profile.
   const sections = await load(client.GET("/api/content/about"));
   const problems = entries<{ t: string; d: string }>(t.raw("problem.items"));
-  const img = (src: string, className: string) => (
+  const img = (slot: SiteImageSlot, className: string) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt="" loading="lazy" className={cn("w-full rounded-3xl object-cover", className)} />
+    <img src={photo(slot).src} alt={photo(slot).alt} loading="lazy" className={cn("w-full rounded-3xl object-cover", className)} />
   );
 
   return (
     <>
-      <PageBanner kicker={t("kicker")} title={t("title")} description={t("lead")} image="/images/content/pipes.jpg" />
+      <PageBanner kicker={t("kicker")} title={t("title")} description={t("lead")} image={photo("about-banner").src} />
 
       <section className="container-page grid items-center gap-12 py-16 lg:grid-cols-[1.2fr_1fr]">
         <div className="space-y-4 leading-8 text-ink-2">
@@ -41,8 +42,8 @@ export default async function AboutPage() {
           <p>{t("overview.p3")}</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          {img("/images/content/drums.jpg", "aspect-[3/4]")}
-          {img("/images/content/vessels.jpg", "mt-10 aspect-[3/4]")}
+          {img("about-intro-1", "aspect-[3/4]")}
+          {img("about-intro-2", "mt-10 aspect-[3/4]")}
         </div>
       </section>
 
@@ -69,7 +70,7 @@ export default async function AboutPage() {
       </section>
 
       <section className="container-page grid items-center gap-12 pb-16 lg:grid-cols-2">
-        {img("/images/content/compressors.jpg", "aspect-[4/3]")}
+        {img("about-gap", "aspect-[4/3]")}
         <div>
           <SectionTitle title={t("gap.title")} />
           <div className="-mt-4 space-y-4 leading-8 text-ink-2">
@@ -155,7 +156,7 @@ export default async function AboutPage() {
             <Link href="/services" className="inline-flex h-12 items-center rounded-xl border border-patina/40 px-6 font-extrabold text-patina hover:bg-patina-50">{tc("nav.services")}</Link>
           </div>
         </div>
-        {img("/images/content/steel-brackets.jpg", "aspect-square")}
+        {img("about-solution", "aspect-square")}
       </section>
 
       {sections.length > 0 && (

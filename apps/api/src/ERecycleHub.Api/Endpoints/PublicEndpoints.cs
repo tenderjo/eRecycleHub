@@ -71,6 +71,7 @@ public static class PublicEndpoints
         g.MapGet("/content/settings/{key}", async (string key, PublicContent c, CancellationToken ct) =>
             await c.SettingAsync(key, ct) is { } s ? Results.Ok(s) : Results.Problem(statusCode: 404, title: "setting.not_found", extensions: new Dictionary<string, object?> { ["code"] = "setting.not_found" }))
             .Produces<SettingDto>();
+        g.MapGet("/content/images", (PublicContent c, CancellationToken ct) => c.ImagesAsync(ct));
         g.MapGet("/i18n/{locale}", (string locale, PublicContent c, CancellationToken ct) => c.TranslationOverridesAsync(locale, ct));
         g.MapGet("/sitemap", async (PublicContent c, CancellationToken ct) => { var (a, s) = await c.SitemapAsync(ct); return new { auctions = a, stores = s }; });
 
